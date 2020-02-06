@@ -1,0 +1,23 @@
+<div>
+  <button mat-button color="primary" (click)="stopwatch.start()">Start</button>
+  <button mat-button color="accent" (click)="stopwatch.stop()">Stop</button>
+  <button mat-button color="warn" (click)="stopwatch.clear()">Reset</button>
+
+</div>
+
+<app-timer #stopwatch> 
+<!-- variavel de template para acessar os metodos dopróprio template -->
+</app-timer>
+
+
+<div>
+  <button mat-button color="primary" (click)="start()">Start</button>
+  <button mat-button color="accent" (click)="stop()">Stop</button>
+  <button mat-button color="warn" (click)="clear()">Reset</button>
+</div>
+<!-- acessar pelo view child (declara o componente timercomponent no componente deste mesmo (parent-child-component)-->
+
+<app-timer #stopwatch2> 
+  </app-timer>
+  
+<p #myP>Hi there!!</p>
