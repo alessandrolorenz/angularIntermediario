@@ -24,7 +24,7 @@
           <mat-icon>check</mat-icon>
         </button>
 
-        <button mat-icon-button color="primary" >
+        <button mat-icon-button color="primary" (click)=" generateRandomNumber()" >
           <mat-icon>refresh</mat-icon>
         </button>
     </section>
@@ -38,6 +38,7 @@
               [name]="c.name"
               [age]="c.age"
               [food]="c.food" #child>
+              Numero Randomico gerado: {{randomNumber}}
             </app-lifecicle-child>
           </p>
 

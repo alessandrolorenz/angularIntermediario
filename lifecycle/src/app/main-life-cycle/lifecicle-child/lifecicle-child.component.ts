@@ -22,9 +22,12 @@ export class LifecicleChildComponent implements OnInit, OnChanges, OnDestroy{
 
   colors: string[] = ["accent", "warn", "primary"]
 
+  private intervalRef = null;
+
   constructor() {
     console.log(this.name + " constructor");
     this.newEvent("constructor");
+    this.intervalRef = setTimeout(()=>{ console.log('interval')}, 1000)
    }
 
   ngOnInit() {
@@ -43,7 +46,6 @@ export class LifecicleChildComponent implements OnInit, OnChanges, OnDestroy{
    /* if(changes['name']) {
       console.log("new name: " + changes['name'].currentValue)
     }*/
-
   }
 
   ngAfterContentInit() {
@@ -59,6 +61,7 @@ export class LifecicleChildComponent implements OnInit, OnChanges, OnDestroy{
   ngOnDestroy() {
     console.log(this.name + " ngOnDestroy");
     this.newEvent("ngOnDestroy");
+    clearInterval(this.intervalRef);
   }
 
   newEvent(name: string){

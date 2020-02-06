@@ -16,7 +16,15 @@ export class MainLifeCycleComponent implements OnInit {
   private food: string;
   private editClient: number = -1;
 
-  constructor() { }
+  private randomNumber: number; // a ser mandado na tag com ng-content para o filho
+
+  constructor() {
+    this.generateRandomNumber();
+   }
+
+   generateRandomNumber() {
+     this.randomNumber = Math.round(Math.random()*1000);
+   }
   
   save(){
     if(this.editClient == -1) {
