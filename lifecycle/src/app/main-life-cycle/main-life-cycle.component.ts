@@ -14,17 +14,36 @@ export class MainLifeCycleComponent implements OnInit {
   private name: string;
   private age: number;
   private food: string;
-  private editClient: Client = null;
+  private editClient: number = -1;
 
   constructor() { }
   
   save(){
-    if(this.editClient == null) {
+    if(this.editClient == -1) {
       this.clients.push({name: this.name, age: this.age, food: this.food});
-      this.age=null;
-      this.name="";
-      this.food="";
+    }else {
+      this.clients[this.editClient].age = this.age;
+      this.clients[this.editClient].name = this.name;
+      this.clients[this.editClient].food = this.food;
+      this.editClient = -1
     }
+    this.age=null;
+    this.name="";
+    this.food="";
+  }
+
+  edit(i: number) {
+    this.age=this.clients[i].age;
+    this.name=this.clients[i].name;
+    this.food=this.clients[i].food;
+    this.editClient = i;
+
+
+  }
+
+  remove(i: number){
+    this.clients.splice(i,1)
+
   }
 
   ngOnInit() {
