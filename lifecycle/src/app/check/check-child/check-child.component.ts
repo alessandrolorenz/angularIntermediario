@@ -7,13 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CheckChildComponent implements OnInit {
 
-  @Input() name: string;
+
 
   constructor() { 
     console.log("      ChecChild constructor")
   }
 
- 
+
   ngOnInit() {
     console.log("      ChecChild ngOnInit")
   }
