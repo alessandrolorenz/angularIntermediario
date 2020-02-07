@@ -1,1 +1,32 @@
-<p>produts-table works!</p>
+<div >
+  <table mat-table [dataSource]="products">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prodName">
+      <th mat-header-cell *matHeaderCellDef> name </th>
+      <td mat-cell *matCellDef="let user"> {{user.prodName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> price </th>
+      <td mat-cell *matCellDef="let user"> {{user.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> description </th>
+      <td mat-cell *matCellDef="let user"> {{user.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef> department </th>
+      <td mat-cell *matCellDef="let user"> {{user.department.name}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="prodColumns"></tr>
+<tr mat-row *matRowDef="let myRowData; columns: prodColumns"></tr>
+  </table>
+</div>
