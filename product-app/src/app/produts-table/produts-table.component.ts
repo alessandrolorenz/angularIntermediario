@@ -21,7 +21,7 @@ export class ProdutsTableComponent implements OnInit {
     this.products = this.productService.getProducts();
     this.productService.onNewProduct.subscribe(p=>{
       this.table.renderRows();
-    }) //tofoeventemitter é subject (gera um evento que deve subscribed)
+    }) //to foreventemitter é subject (gera um evento que deve ser subscribed)
   }
 
 }
