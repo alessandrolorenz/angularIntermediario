@@ -47,7 +47,8 @@ mongoose.connect('mongodb://localhost:27017/namesdb',
         message: 'Internal error'
       });
     } 
-    return res.status(200).json(data)
+    // return res.status(200).json(data)
+    return setTimeout(()=>{res.status(200).json(data)}, 2000)
   });
 });
 
